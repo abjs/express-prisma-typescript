@@ -1,0 +1,48 @@
+{
+  "name": "template-express-prisma-typescript",
+  "version": "1.0.0",
+  "description": "template for prisma express typescript",
+  "main": "dist",
+  "keywords": [
+    "prisma",
+    "express",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abjs/template-express-prisma-typescript.git"
+  },
+  "author": "Abin Joseph",
+  "license": "ISC",
+  "scripts": {
+    "start": "node dist",
+    "build": "tsc && tsc-alias",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
+    "ps": "prisma studio",
+    "pm": "prisma migrate dev",
+    "pg": " prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.13.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "zod": "^3.14.4",
+    "zod-express-middleware": "^1.4.0"
+  },
+  "devDependencies": {
+    "@ef-carbon/tspm": "^2.2.5",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "@types/yup": "^0.29.13",
+    "prisma": "^3.13.0",
+    "ts-node-dev": "^1.1.8",
+    "tsc-alias": "^1.6.6",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3",
+    "zod-prisma": "^0.5.4"
+  },
+  "prisma": {
+    "schema": "src/api/db/schema.prisma"
+  }
+}

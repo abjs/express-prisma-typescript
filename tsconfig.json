@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "moduleResolution": "node",
+    "paths": {
+      "@helper": ["api/helper/index.ts"],
+      "@routes": ["api/routes/index.ts"],
+      "@config": ["config/index.ts"],
+      "@services": ["api/services/index.ts"],
+      "@typescript": ["api/typescript/index.ts"],
+      "@controllers": ["api/controllers/index.ts"],
+      "@middlewares": ["api/middlewares/index.ts"],
+      "@validations": ["api/validations/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["typings/*", "node_modules"]
+}
