@@ -1,24 +1,24 @@
-import * as z from "zod";
-import { validateRequestBody } from "zod-express-middleware";
+import * as z from 'zod';
+import { validateRequestBody } from 'zod-express-middleware';
 
 export const _UserModel = z.object({
-  userId: z.string().nullish(),
-  email: z.string().email(),
-  fullName: z.string(),
-  age: z.number().int(),
-  createdAt: z.date().nullish(),
-  updatedAt: z.date().nullish(),
+	userId: z.string().nullish(),
+	email: z.string().email(),
+	fullName: z.string(),
+	age: z.number().int(),
+	createdAt: z.date().nullish(),
+	updatedAt: z.date().nullish(),
 });
 
 export const _GetUserModel = z.object({
-  userId: z.string(),
+	userId: z.string(),
 });
 export const _DeleteUserModel = z.object({
-  userId: z.string(),
+	userId: z.string(),
 });
 
 export interface UpdateUserType extends z.infer<typeof _UserModel> {
-  userId: string;
+	userId: string;
 }
 
 export type UserType = z.infer<typeof _UserModel>;
