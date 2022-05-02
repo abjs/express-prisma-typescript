@@ -8,6 +8,7 @@ module.exports = {
 			files: ['*.ts', '*.tsx'],
 			rules: {
 				'@typescript-eslint/no-shadow': ['error'],
+				'@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
 				'no-shadow': 'off',
 				'no-undef': 'off',
 				'no-console': 'off',

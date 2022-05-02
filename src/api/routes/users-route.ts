@@ -1,0 +1,10 @@
+import express from 'express';
+import { UserController } from '@controllers';
+import { getUserValidation, createUserValidation, updateUserValidation, deleteUserValidation } from '@validations';
+export const usersRouter = express.Router();
+const userController = new UserController();
+usersRouter.get('', userController.getAllUser);
+usersRouter.get('/:userId', getUserValidation, userController.getUser);
+usersRouter.post('', createUserValidation, userController.createUser);
+usersRouter.put('/:userId', updateUserValidation, userController.updateUser);
+usersRouter.delete('/:userId', deleteUserValidation, userController.deleteUser);

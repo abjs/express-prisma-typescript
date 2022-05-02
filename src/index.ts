@@ -1,10 +1,13 @@
-import { rootRouter, userRouter } from '@routes';
+import { rootRouter, usersRouter } from '@routes';
 import express from 'express';
 import cors from 'cors';
-const port = 5000;
+import { LogMiddleware } from '@middlewares';
+const port = 6000;
+const log = new LogMiddleware();
 const app = express();
 app.use(cors());
+app.use(log.getPath);
 app.use(express.json({ limit: '10mb' }));
 app.use('/', rootRouter);
-app.use('/users', userRouter);
+app.use('/api/v1/users', usersRouter);
 app.listen(port, () => console.log(`🚀 Server ready  at: http://localhost:${port}`));
